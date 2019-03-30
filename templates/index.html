@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+  <h1>Users</h1>
+  <a href="{{url_for('new')}}">Cadastra novo usuário</a>
+</div>
+
+<table>
+  <thead>
+  <tr>
+    <th>Nome completo</th>
+    <th>Nome reduzido</th>
+    <th>Cargo</th>
+    <th>Nível de acesso</th>
+    <th>Último acesso</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  {% if users|length == 0 %}
+  <tr>
+    <td colspan="5" align="center">Nenhum usuário cadastrado!</td>
+  </tr>
+  {% endif %}
+
+  {% for user in users %}
+  <tr>
+    <td>{{ user.fullname }}</td>
+    <td>{{ user.nickname }}</td>
+    <td>{{ user.role }}</td>
+    <td>{{ user.access_level }}</td>
+    <td>{{ user.last_access }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
