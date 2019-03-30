@@ -4,7 +4,7 @@ from user import User
 app = Flask(__name__)
 
 users = []
-
+access_levels = ['visitante', 'usuário', 'administrativo', 'técnico', 'super-usuário']
 
 @app.route('/')
 def root():
@@ -18,7 +18,7 @@ def index():
 
 @app.route('/users/new')
 def new():
-    return render_template('new.html')
+    return render_template('new.html', access_levels=access_levels)
 
 
 if __name__ == '__main__':
