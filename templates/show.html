@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Info about {{user.nickname}}</h1>
-<a href="{{url_for('edit', nickname=user.nickname )}}">Editar esse usuário</a>
+
 <tr>
+    <td><a href="{{url_for('edit', nickname=user.nickname )}}">Editar esse usuário</a></td>
     <td>{{ user.fullname }}</td>
     <td>{{ user.nickname }}</td>
     <td>{{ user.role }}</td>
     <td>{{ user.access_level }}</td>
     <td>{{ user.last_access }}</td>
-</tr>
-
-<h2>Excluir usuário</h2>
+</tr><br>
+<h5>Excluir usuário</h5>
 <form method="POST" action="{{url_for('show', nickname=user.nickname )}}?_method=DELETE">
-    <input type="submit" value="X">
+    <input style="color:red" type="submit" value="Excluir">
 </form>
 {% endblock %}
