@@ -21,11 +21,16 @@ def root():
 
 @app.route('/users', methods=['GET', 'POST'])
 def index():
+   error = None
    if request.method == 'POST':
-      new_user = User(request.form['fullname'], request.form['nickname'], request.form['role'], request.form['access_level'], request.form['last_access'])
-      users.append(new_user)
-      return redirect(url_for('index'))
-   return render_template('index.html', users=users)
+      try:
+         found_user = find_user(request.form['nickname'])
+         error = 'Já existe um usuário com esse nome curto: ' + request.form['nickname']
+      except IndexError:
+         new_user = User(request.form['fullname'], request.form['nickname'], request.form['role'], request.form['access_level'], request.form['last_access'])
+         users.append(new_user)
+         return redirect(url_for('index'))
+   return render_template('index.html', users=users, error=error)
 
 @app.route('/users/new')
 def new():

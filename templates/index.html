@@ -6,6 +6,10 @@
   <a href="{{url_for('new')}}">Cadastra novo usuário</a>
 </div>
 
+{% if error %}
+  <p>{{ error }}</p>
+{% endif %}
+
 <table>
   <thead>
   <tr>
