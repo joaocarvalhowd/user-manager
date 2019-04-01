@@ -1,7 +1,9 @@
 from flask import Flask, request, redirect, url_for, render_template
 from user import User
+from flask_modus import Modus
 
 app = Flask(__name__)
+modus = Modus(app)
 
 users = []
 access_levels = ['visitante', 'usuário', 'administrativo', 'técnico', 'super-usuário']
@@ -17,19 +19,6 @@ def root():
 
 @app.route('/users', methods=['GET', 'POST'])
 def index():
-    if request.method == 'POST':
-        new_user = User(
-            request.form['fullname'],
-            request.form['nickname'],
-            request.form['role'],
-            request.form['access_level'],
-            request.form['last_access']
-        )
-
-        users.append(new_user)
-
-        return redirect(url_for('index'))
-
     return render_template('index.html', users=users)
 
 
