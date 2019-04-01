@@ -39,6 +39,6 @@
 
 <h5>Excluir usuário</h5>
 <form method="POST" action="{{url_for('show', nickname=user.nickname )}}?_method=DELETE">
-    <input style="color:red; background-color: yellow" type="submit" value="Excluir usuário">
+    <input style="color:red; background-color: yellow" type="submit" value="Excluir usuário" onclick="return confirm('Are you sure?')">
 </form>
 {% endblock %}
