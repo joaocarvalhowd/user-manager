@@ -23,7 +23,6 @@
     <td colspan="5" align="center">Nenhum usuário cadastrado!</td>
   </tr>
   {% endif %}
-
   {% for user in users %}
   <tr>
     <td>{{ user.fullname }}</td>
@@ -31,6 +30,7 @@
     <td>{{ user.role }}</td>
     <td>{{ user.access_level }}</td>
     <td>{{ user.last_access }}</td>
+    <td><a href="{{url_for('show', nickname=user.nickname)}}">editar</a></td>
   </tr>
   {% endfor %}
   </tbody>
