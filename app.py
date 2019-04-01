@@ -11,7 +11,11 @@ access_levels = ['visitante', 'usuario', 'administrativo', 'tecnico', 'super-usu
 
 
 def find_user(nickname):
-   return [user for user in users if user.nickname == nickname][0]
+    return [user for user in users if user.nickname == nickname][0]
+
+
+def find_super_users():
+    return [user for user in users if user.access_level == 'super-usuario']
 
 
 @app.route('/')
@@ -30,7 +34,7 @@ def index():
          new_user = User(request.form['fullname'], request.form['nickname'], request.form['role'], request.form['access_level'], request.form['last_access'])
          users.append(new_user)
          return redirect(url_for('index'))
-   return render_template('index.html', users=users, error=error)
+   return render_template('index.html', users=users, error=error, total_super_users=len(find_super_users()))
 
 @app.route('/users/new')
 def new():
