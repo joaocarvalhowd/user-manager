@@ -2,10 +2,22 @@
 
 CAP 2 - ENTRANDO NO MUNDO DOS RÉPTEIS - DESENVOLVER UMA FERRAMENTA PARA GERENCIAMENTO DE USUÁRIO
 
+# Projeto online
+
+https://user-manager-fiap.herokuapp.com/
+
+###### * Pode ficar indisponivel em caso de passar 30 sem acesso de ninguém por ser uma conta free no heroku, só aguardar uns minutos que sobe novamente
+
 # Instalar projeto
 
 ```sh
 pip install -r requirements.txt
+```
+
+# Rodar o projeto
+
+```sh
+python app.py
 ```
 
 **Alunos:** [João Victor Barbosa de Carvalho](https://github.com/joaocarvalhowd), [Marco Luiz Gonzaga](https://github.com/pixelcake), [Bruno Caoe Ferreira Spera](https://github.com/brunospera)
