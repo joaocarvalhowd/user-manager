@@ -41,7 +41,7 @@ python app.py
 Por esse ser um projeto acadêmico alguns pontos não funcionarão como num projeto real, de qualquer forma fizemos o máximo para gerar uma usabilidade agradável, e para esse projeto utilizamos o microfrawork Flask Python (http://flask.pocoo.org/docs/1.0/) para realização do trabalho.
 Para gerar a data de acesso o usuário deverá fazer o login, foi utilizada a tag Date que dispara um calendário em navegadores modernos exceto o Safari que converte o mesmo em Text. Poderia ser implementado um JS para corrigir isso e tornar Cross Browser.
 Num sistema ideal somente um super-user deveria ter acesso ao cadastro e outras funções, no caso desse trabalho qualquer um com acesso pode cadastrar, editar e excluir.
-Foi implementado CSS que estava fora do escopo do porjeto para que o mesmo ficasse mais agradável.
+Foi implementado CSS que estava fora do escopo do porjeto para que o mesmo ficasse mais agradável mas não foi implementado um design responsivo.
 
 ###### Algumas imagens das telas do projeto:
 ![Login page](https://pentest.tools/fiap/img/login.jpg)
