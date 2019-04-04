@@ -121,7 +121,7 @@ def show(nickname):
       return redirect(url_for('admin_users'))
    if request.method == b'DELETE':
       users.remove(found_user)
-      return redirect(url_for('index'))
+      return redirect(url_for('admin_users'))
    return render_template('show.html', user=found_user, access_levels=access_levels)
 
 if __name__ == '__main__':
