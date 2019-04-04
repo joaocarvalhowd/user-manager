@@ -1,28 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="content-center">
 <h2>Bem vindo {{user.nickname}}</h2>
+<a class="important" href="{{url_for('admin_users')}}">🔙 Voltar</a>
 <p>Você está logado como {{user.access_level}}</p>
 
 <img src="https://www.stonebranch.com/fileadmin/_processed_/f/8/csm_teaser-happy-customer_34cff504ac.png"
     alt="placeholder" width="100px" height="100px" ">
-<h5>Editar esse usuário</h5>
+<h3>Editar esse usuário</h3>
 <form method="POST" action="{{url_for('show', nickname=user.nickname)}}?_method=PATCH">
-    <div>
+    <div class="container-label">
         <label>Nome completo</label>
         <input type="text" name="fullname" value="{{user.fullname}}" required>
     </div>
 
-    <div>
+    <div class="container-label">
         <label>Nome curto</label>
         <input type="text" name="nickname" value="{{user.nickname}}" required>
     </div>
 
-    <div>
+    <div class="container-label">
         <label>Cargo</label>
         <input type="text" name="role" value="{{user.role}}" required>
     </div>
 
-    <div>
+    <div class="container-label">
         <label>Nível de acesso</label>
         <select name="access_level" required>
             <option value="">{{user.access_level}}</option>
@@ -33,11 +35,10 @@
     </div>
     <input type="hidden" name="last_access">
 
-    <input style="color:black; background-color: yellow" type="submit" value="Editar usuário">
+    <input class="insert inverted" type="submit" value="✎ Editar usuário">
 </form>
-
-<h5>Excluir usuário</h5>
 <form method="POST" action="{{url_for('show', nickname=user.nickname )}}?_method=DELETE">
-    <input style="color:red; background-color: yellow" type="submit" value="Excluir usuário" onclick="return confirm('Are you sure?')">
+    <input class="insert" type="submit" value="🗑 Excluir usuário" onclick="return confirm('Are you sure?')">
 </form>
+</div>
 {% endblock %}

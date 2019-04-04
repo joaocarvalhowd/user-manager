@@ -1,26 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<div class="content-center">
 <h1>Login</h1>
-
+<a class="important" href="{{url_for('admin_users')}}">🔙 Voltar</a>
 {% if error %}
-  <p style='color: red'>{{ error }}</p>
+  <p class="important">{{ error }}</p>
 {% endif %}
 
 <form method="POST" action="{{url_for('login')}}">
 
   <div>
-    <label>Nome curto</label>
+    <label>Nome curto / Nickname</label><br>
     <input type="text" name="nickname" required>
   </div>
 
-  <input style="color:black; background-color: yellow" type="submit" value="Acessar">
+  <input style="margin-top:15px;" class="insert inverted " type="submit" value="🔒Acessar">
 
 </form>
 
-<hr>
-
-<a href="{{url_for('new')}}"><h4>Cadastrar novo usuário</h4></a>
-
+<a class="important" href="{{url_for('new')}}">→ Cadastrar novo usuário</a>
+</div>
 {% endblock %}

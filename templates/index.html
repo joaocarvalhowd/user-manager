@@ -1,94 +1,89 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div>
-  <h1>Users</h1>
-  <a href="{{url_for('new')}}">Cadastra novo usuário</a>
-
-  <a href="{{url_for('login')}}"><h4>🔑 Acessar um usuário</h4></a>
-</div>
-
-{% if error %}
-  <p>{{ error }}</p>
-{% endif %}
-
-<hr>
-
-<form action="{{url_for('admin_users')}}">
-  <h1>Pesquisar:</h1>
+<div class="col-3">
   <div>
-    <label>Nome curto</label>
-    <input type="text" name="search" value="{{ search_value if search_value != None else '' }}">
-  </div>
-  <input type="submit" value="Search User">
-</form>
-
-<hr>
-
-<form action="{{url_for('admin_users')}}">
-  <h1>Filtrar por último acesso(login):</h1>
-  <div>
-    <label>Selecionar data</label>
-    <input type="date" name="last_access" value="{{ last_access_value if last_access_value != None else '' }}">
-  </div>
-  <input type="submit" value="Search User">
-</form>
-
-<hr>
-
-<form action="{{url_for('admin_users')}}">
-  <h1>Filtrar:</h1>
-  <div>
-    <label>Nível de acesso</label>
-    <select name="access_level">
-      <option value="">Selecione...</option>
-      {% for access_level in access_levels %}
-        <option
-          value="{{access_level}}"
-          {% if access_level == access_level_value %} selected{% endif %}
-        >
-          {{ access_level }}
-        </option>
-      {% endfor %}
-    </select>
+    <form action="{{url_for('new')}}">
+      <h2>Usuários</h2>
+      <input class="insert" type="submit" value="👤 Cadastra novo usuário">
+    </form>
+    
+    <form action="{{url_for('login')}}">
+      <input class="insert inverted" type="submit" value="🔑 Fazer login">
+    </form>
   </div>
 
-  <input type="submit" value="Filtrar">
-</form>
-
-<hr>
-
-<p>Total de super-usuários: <b>{{ total_super_users }}</b></p>
-
-<hr>
-
-<table>
-  <thead>
-  <tr>
-    <th>Nome completo</th>
-    <th>Nome reduzido</th>
-    <th>Cargo</th>
-    <th>Nível de acesso</th>
-    <th>Último acesso (Último login)</th>
-  </tr>
-  </thead>
-
-  <tbody>
-  {% if users|length == 0 %}
-  <tr>
-    <td colspan="5" align="center">Nenhum usuário cadastrado!</td>
-  </tr>
+  {% if error %}
+    <p>{{ error }}</p>
   {% endif %}
-  {% for user in users %}
-  <tr>
-    <td>{{ user.fullname }}</td>
-    <td>{{ user.nickname }}</td>
-    <td>{{ user.role }}</td>
-    <td>{{ user.access_level }}</td>
-    <td>{{ user.last_access|strftime }}</td>
-    <td><a href="{{url_for('show', nickname=user.nickname)}}">editar</a></td>
-  </tr>
-  {% endfor %}
-  </tbody>
-</table>
+
+  <form action="{{url_for('admin_users')}}">
+    <h2>Pesquisar:</h2>
+    <label>Nome curto</label>
+    <div class="input-line">
+      <input type="text" name="search" value="{{ search_value if search_value != None else '' }}">
+      <input type="submit" value="🔎 Buscar usuário">
+    </div>
+  </form>
+
+  <form action="{{url_for('admin_users')}}">
+    <h2>Filtrar por último acesso(login):</h2>
+      <label>Selecionar data</label>
+      <div class="input-line">
+        <input type="date" name="last_access" value="{{ last_access_value if last_access_value != None else '' }}">
+        <input type="submit" value="🔎 Filtrar">
+      </div>
+  </form>
+
+  <form action="{{url_for('admin_users')}}">
+    <h2>Filtrar por nível de acesso:</h2>  
+      <label>Nível de acesso</label>
+      <div class="input-line">
+      <select class="minimal" name="access_level">
+        <option value="">Selecione...</option>
+        {% for access_level in access_levels %}
+          <option
+            value="{{access_level}}"
+            {% if access_level == access_level_value %} selected{% endif %}
+          >
+            {{ access_level }}
+          </option>
+        {% endfor %}
+      </select>
+      <input type="submit" value="🔎 Filtrar">
+    </div>
+  </form>
+</div>
+<div class="col-9">
+  <p class="super-user">Total de super-usuários: {{ total_super_users }}</p>
+  <table>
+    <thead>
+    <tr>
+      <th>Nome completo</th>
+      <th>Nome reduzido</th>
+      <th>Cargo</th>
+      <th>Nível de acesso</th>
+      <th>Último acesso (Último login)</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% if users|length == 0 %}
+    <tr>
+      <td colspan="5" align="center">Nenhum usuário cadastrado!</td>
+    </tr>
+    {% endif %}
+    {% for user in users %}
+    <tr>
+      <td>{{ user.fullname }}</td>
+      <td>{{ user.nickname }}</td>
+      <td>{{ user.role }}</td>
+      <td>{{ user.access_level }}</td>
+      <td>{{ user.last_access|strftime }}</td>
+      <td><a  class="important" href="{{url_for('show', nickname=user.nickname)}}">✎ editar</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
 {% endblock %}

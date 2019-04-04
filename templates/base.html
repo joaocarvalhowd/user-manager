@@ -6,9 +6,174 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>User manager</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color:#F2F2F2;
+      color:#0D0D0D;
+    }
+    h1, h2, h3, h4, h5 {
+      color: #3E4031;
+    }
+    td {
+      padding: 10px 5px;
+      border: 1px solid #fafafa;
+    }
+    .content {
+      padding-left: 50px; 
+    }
+    .content-center {
+      width: 400px;
+      margin: 50px auto ;
+    }
+    .content-center label {
+      font-size: 16px;
+      font-weight: 100;
+      text-transform: uppercase;
+      line-height: 40px;
+    }
+    .container-label {
+      margin-bottom: 5px;
+    }
+    .container-label input,.container-label select {
+      float: right;
+    }
+    .col-3 {
+      width: 30%;
+      padding-top: 50px;
+      float: left;
+    }
+    .col-9 {
+      width: 60%;
+      padding:50px 0 0 9%;
+      float: left;
+    }
+    /* Color Theme Swatches in Hex Reference*/ 
+    .main-color{ color: #A3A698; } 
+    .secondary-color { color: #3E4031; } 
+    .highlight-color { color: #F2DE77; } 
+    .background-color { color: #F2F2F2; } 
+    .plain-text-color{ color: #0D0D0D; } 
+    .link-text{color: brown;}
+
+    .super-user {
+      background-color: #3E4031;
+      color: #F2F2F2;
+      text-align: left;
+      font-size: 18px;
+      padding:20px 0 20px 20px;
+      font-weight: bold;
+    }
+    p.important, a.important {
+      color: brown;
+      text-decoration: none;
+    }
+    a.important:hover {
+      color: #3E4031;
+    }
+    /*Button styles */
+    input[type=button], input[type=submit] {
+      background-color: #F2DE77;
+      border: none;
+      color: #0D0D0D;
+      padding: 10px 0px;
+      text-decoration: none;
+      margin-left: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      width: 135px;
+      padding-left: 5px;
+    }
+    input[type=button]:hover, input[type=submit]:hover {
+      background-color: #0D0D0D;
+      color: #fff;
+    }
+    input[type="text"], input[type="date"] {
+      height: 30px;
+      width: 225px;
+      font-size: 14px;
+    }
+    input.insert {
+      width: 250px;
+      background-color: transparent;
+      color: brown;
+      font-size: 20px;
+      border: 1px solid brown;
+      border-radius: 5px;
+      text-align:center;
+      margin: 10px 0;
+    }
+    input.insert:hover {
+      background-color: brown;
+      color: #FFF;
+    }
+    input.insert.inverted {
+      background-color: brown;
+      color: #FFF;
+    }
+    input.insert.inverted:hover {
+      background-color: #FFF;
+      color: brown;
+    }
+    select {
+      background-color: white;
+      border: thin solid #F2DE77;
+      border-radius: 4px;
+      display: inline-block;
+      font: inherit;
+      line-height: 13px;
+      padding: 12px 5px;
+      width: 233px;
+      /* reset defaults styles */
+      margin: 0;      
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+    select.minimal {
+      background-image:
+        linear-gradient(45deg, transparent 50%, gray 50%),
+        linear-gradient(135deg, gray 50%, transparent 50%),
+        linear-gradient(to right, #ccc, #ccc);
+      background-position:
+        calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px),
+        calc(100% - 2.5em) 0.5em;
+      background-size:
+        5px 5px,
+        5px 5px,
+        1px 1.5em;
+      background-repeat: no-repeat;
+    }
+    select.minimal:focus {
+      background-image:
+        linear-gradient(45deg, #A3A698 50%, transparent 50%),
+        linear-gradient(135deg, transparent 50%, #A3A698 50%),
+        linear-gradient(to right, #ccc, #ccc);
+      background-position:
+        calc(100% - 15px) 1em,
+        calc(100% - 20px) 1em,
+        calc(100% - 2.5em) 0.5em;
+      background-size:
+        5px 5px,
+        5px 5px,
+        1px 1.5em;
+      background-repeat: no-repeat;
+      border-color: #A3A698;
+      outline: 0;
+    }
+    select:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 #000;
+    }
+  </style>
 </head>
 <body>
-{% block content %}
-{% endblock %}
+  <div class="content">
+    {% block content %}
+    {% endblock %}
+  </div>
 </body>
 </html>
