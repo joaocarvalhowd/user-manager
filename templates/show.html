@@ -9,28 +9,27 @@
 <form method="POST" action="{{url_for('show', nickname=user.nickname)}}?_method=PATCH">
     <div>
         <label>Nome completo</label>
-        <input type="text" name="fullname" value="{{user.fullname}}">
+        <input type="text" name="fullname" value="{{user.fullname}}" required>
     </div>
 
     <div>
         <label>Nome curto</label>
-        <input type="text" name="nickname" value="{{user.nickname}}">
+        <input type="text" name="nickname" value="{{user.nickname}}" required>
     </div>
 
     <div>
         <label>Cargo</label>
-        <input type="text" name="role" value="{{user.role}}">
+        <input type="text" name="role" value="{{user.role}}" required>
     </div>
 
     <div>
         <label>Nível de acesso</label>
-        <select name="access_level">
+        <select name="access_level" required>
             <option value="">{{user.access_level}}</option>
             {% for access_level in access_levels %}
             <option value="{{access_level}}">{{ access_level }}</option>
             {% endfor %}
         </select>
-
     </div>
     <input type="hidden" name="last_access">
 

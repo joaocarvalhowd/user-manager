@@ -4,13 +4,63 @@
 <div>
   <h1>Users</h1>
   <a href="{{url_for('new')}}">Cadastra novo usuário</a>
+
+  <a href="{{url_for('login')}}"><h4>🔑 Acessar um usuário</h4></a>
 </div>
 
 {% if error %}
   <p>{{ error }}</p>
 {% endif %}
 
+<hr>
+
+<form action="{{url_for('admin_users')}}">
+  <h1>Pesquisar:</h1>
+  <div>
+    <label>Nome curto</label>
+    <input type="text" name="search" value="{{ search_value if search_value != None else '' }}">
+  </div>
+  <input type="submit" value="Search User">
+</form>
+
+<hr>
+
+<form action="{{url_for('admin_users')}}">
+  <h1>Filtrar por último acesso(login):</h1>
+  <div>
+    <label>Selecionar data</label>
+    <input type="date" name="last_access" value="{{ last_access_value if last_access_value != None else '' }}">
+  </div>
+  <input type="submit" value="Search User">
+</form>
+
+<hr>
+
+<form action="{{url_for('admin_users')}}">
+  <h1>Filtrar:</h1>
+  <div>
+    <label>Nível de acesso</label>
+    <select name="access_level">
+      <option value="">Selecione...</option>
+      {% for access_level in access_levels %}
+        <option
+          value="{{access_level}}"
+          {% if access_level == access_level_value %} selected{% endif %}
+        >
+          {{ access_level }}
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <input type="submit" value="Filtrar">
+</form>
+
+<hr>
+
 <p>Total de super-usuários: <b>{{ total_super_users }}</b></p>
+
+<hr>
 
 <table>
   <thead>
@@ -19,7 +69,7 @@
     <th>Nome reduzido</th>
     <th>Cargo</th>
     <th>Nível de acesso</th>
-    <th>Último acesso</th>
+    <th>Último acesso (Último login)</th>
   </tr>
   </thead>
 
@@ -35,7 +85,7 @@
     <td>{{ user.nickname }}</td>
     <td>{{ user.role }}</td>
     <td>{{ user.access_level }}</td>
-    <td>{{ user.last_access }}</td>
+    <td>{{ user.last_access|strftime }}</td>
     <td><a href="{{url_for('show', nickname=user.nickname)}}">editar</a></td>
   </tr>
   {% endfor %}
