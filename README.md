@@ -10,15 +10,15 @@ pip install -r requirements.txt
 Alunos – João Victor Barbosa de Carvalho, Marco Luiz Gonzaga, Bruno
 
 
-###Desenvolver uma ferramenta para gerenciar usuários. 
+### Desenvolver uma ferramenta para gerenciar usuários. 
 
-####Você deverá armazenar os seguintes dados de cada usuário: 
+#### Você deverá armazenar os seguintes dados de cada usuário: 
     * nome completo, 
     * nome reduzido (como é chamado dentro do ambiente de trabalho – não poderão existir dois usuários com nomes reduzidos iguais), 
     * cargo, nível de acesso (o nível de acesso será dividido em: visitante, usuário, administrativo, técnico e super-usuário), 
     * data e hora do último acesso (considere os dois dados como string).
 
-####Além disso
+#### Além disso
     * cadastrar usuários em uma lista; 
     * retornar quantos super-usuários existem armazenados na lista; 
     * excluir um usuário através do nome reduzido; 
