@@ -118,7 +118,7 @@ def show(nickname):
       found_user.role = request.form['role']
       found_user.access_level = request.form['access_level']
       found_user.last_access = request.form['last_access']
-      return redirect(url_for('index'))
+      return redirect(url_for('admin_users'))
    if request.method == b'DELETE':
       users.remove(found_user)
       return redirect(url_for('index'))
