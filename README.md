@@ -31,7 +31,7 @@ Para gerar a data de acesso o usuário deverá fazer o login, foi utilizada a ta
 Num sistema ideal somente um super-user deveria ter acesso ao cadastro e outras funções, no caso desse trabalho qualquer um com acesso pode cadastrar, editar e excluir.
 Foi implementado CSS que estava fora do escopo do porjeto para que o mesmo ficasse mais agradável.
 
-######Algumas imagens das telas do projeto:
+###### Algumas imagens das telas do projeto:
 ![Login page](https://pentest.tools/fiap/img/login.jpg)
 ---
 ![Main page](https://pentest.tools/fiap/img/main-page.jpg)
