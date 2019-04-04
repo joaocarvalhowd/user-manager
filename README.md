@@ -19,12 +19,12 @@ Alunos – João Victor Barbosa de Carvalho, Marco Luiz Gonzaga, Bruno
     * data e hora do último acesso (considere os dois dados como string).
 
 #### Além disso
-    - [x] cadastrar usuários em uma lista; 
-    - [x] retornar quantos super-usuários existem armazenados na lista; 
-    - [x] excluir um usuário através do nome reduzido; 
-    - [x] pesquisar usuário pelo nome reduzido; 
-    - [x] retornar todos os usuários de acordo com o nível de acesso. 
-    - [x] retornar os usuários que tiveram acesso o último acesso através de uma data especificada.
+ - [x] cadastrar usuários em uma lista; 
+ - [x] retornar quantos super-usuários existem armazenados na lista; 
+ - [x] excluir um usuário através do nome reduzido; 
+ - [x] pesquisar usuário pelo nome reduzido; 
+ - [x] retornar todos os usuários de acordo com o nível de acesso. 
+ - [x] retornar os usuários que tiveram acesso o último acesso através de uma data especificada.
 
 Por esse ser um projeto acadêmico alguns pontos não funcionarão como num projeto real, de qualquer forma fizemos o máximo para gerar uma usabilidade agradável, e para esse projeto utilizamos o microfrawork Flask Python (http://flask.pocoo.org/docs/1.0/) para realização do trabalho.
 Para gerar a data de acesso o usuário deverá fazer o login, foi utilizada a tag Date que dispara um calendário em navegadores modernos exceto o Safari que converte o mesmo em Text. Poderia ser implementado um JS para corrigir isso e tornar Cross Browser.
