@@ -1,4 +1,5 @@
-# user-manager
+# Gerenciador de usuários
+
 CAP 2 - ENTRANDO NO MUNDO DOS RÉPTEIS - DESENVOLVER UMA FERRAMENTA PARA GERENCIAMENTO DE USUÁRIO
 
 # Instalar projeto
@@ -7,8 +8,7 @@ CAP 2 - ENTRANDO NO MUNDO DOS RÉPTEIS - DESENVOLVER UMA FERRAMENTA PARA GERENCI
 pip install -r requirements.txt
 ```
 
-Alunos – João Victor Barbosa de Carvalho, Marco Luiz Gonzaga, Bruno
-
+**Alunos:** [João Victor Barbosa de Carvalho](https://github.com/joaocarvalhowd), [Marco Luiz Gonzaga](https://github.com/pixelcake), [Bruno Caoe Ferreira Spera](https://github.com/brunospera)
 
 ### Desenvolver uma ferramenta para gerenciar usuários. 
 
@@ -33,7 +33,11 @@ Foi implementado CSS que estava fora do escopo do porjeto para que o mesmo ficas
 
 ######Algumas imagens das telas do projeto:
 ![Login page](https://pentest.tools/fiap/img/login.jpg)
+---
 ![Main page](https://pentest.tools/fiap/img/main-page.jpg)
+---
 ![Insert user page](https://pentest.tools/fiap/img/insert-user.jpg)
+---
 ![Edit user page](https://pentest.tools/fiap/img/edit-user.jpg)
+---
 ![Filter by access level](https://pentest.tools/fiap/img/filter-user-by-level-access.jpg)
