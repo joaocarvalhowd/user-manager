@@ -50,7 +50,7 @@ def login():
             found_user.last_access = datetime.now()
             return redirect(url_for('admin_users'))
         except IndexError:
-            return render_template('login.html', error='Usuário não encontrado!')
+            return render_template('login.html', error='Usuario nao encontrado!')
 
     return render_template('login.html')
 
@@ -62,7 +62,7 @@ def admin_users():
     if request.method == 'POST':
         try:
             find_user(request.form['nickname'])
-            error = 'Já existe um usuário com esse nome curto: ' + request.form['nickname']
+            error = 'Ja existe um usuario com esse nome curto: ' + request.form['nickname']
         except IndexError:
             new_user = User(
                 request.form['fullname'],
