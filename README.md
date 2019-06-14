@@ -1,12 +1,6 @@
 # Gerenciador de usuários
 
-CAP 2 - ENTRANDO NO MUNDO DOS RÉPTEIS - DESENVOLVER UMA FERRAMENTA PARA GERENCIAMENTO DE USUÁRIO
-
-# Projeto online
-
-https://user-manager-fiap.herokuapp.com/
-
-###### * Pode ficar indisponivel em caso de passar 30 sem acesso de ninguém por ser uma conta free no heroku, só aguardar uns minutos que sobe novamente
+CAP 5 - E ESSE TAL JSON? - "EVOLUÇÃO DA FERRAMENTA PARA GESTÃO DE USUÁRIOS. "
 
 # Instalar projeto
 
@@ -20,7 +14,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-**Alunos:** [João Victor Barbosa de Carvalho](https://github.com/joaocarvalhowd), [Marco Luiz Gonzaga](https://github.com/pixelcake), [Bruno Caoe Ferreira Spera](https://github.com/brunospera)
+**Alunos:** [João Victor Barbosa de Carvalho](https://github.com/joaocarvalhowd), [Bruno Caoe Ferreira Spera](https://github.com/brunospera)
 
 ### Desenvolver uma ferramenta para gerenciar usuários. 
 
@@ -31,6 +25,7 @@ python app.py
     * data e hora do último acesso (considere os dois dados como string).
 
 #### Além disso
+ - [x] armazenar os dados em um arquivo JSON chamado users.json;
  - [x] cadastrar usuários em uma lista; 
  - [x] retornar quantos super-usuários existem armazenados na lista; 
  - [x] excluir um usuário através do nome reduzido; 
