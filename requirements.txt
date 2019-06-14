@@ -1,8 +1,13 @@
 Click==7.0
+dataclasses-json==0.2.3
 Flask==1.0.2
 Flask-Modus==0.0.1
 gunicorn==19.9.0
 itsdangerous==1.1.0
 Jinja2==2.10
 MarkupSafe==1.1.1
+marshmallow==3.0.0rc6
+mypy-extensions==0.4.1
+open-dev.to==1.0
+typing-inspect==0.4.0
 Werkzeug==0.15.2

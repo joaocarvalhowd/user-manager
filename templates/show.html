@@ -6,7 +6,7 @@
 <p>Você está logado como {{user.access_level}}</p>
 
 <img src="https://www.stonebranch.com/fileadmin/_processed_/f/8/csm_teaser-happy-customer_34cff504ac.png"
-    alt="placeholder" width="100px" height="100px" ">
+    alt="placeholder" width="100px" height="100px">
 <h3>Editar esse usuário</h3>
 <form method="POST" action="{{url_for('show', nickname=user.nickname)}}?_method=PATCH">
     <div class="container-label">
@@ -27,9 +27,9 @@
     <div class="container-label">
         <label>Nível de acesso</label>
         <select name="access_level" required>
-            <option value="">{{user.access_level}}</option>
+            <option value="">Selecione...</option>
             {% for access_level in access_levels %}
-            <option value="{{access_level}}">{{ access_level }}</option>
+            <option value="{{access_level}}" {% if access_level == user.access_level %} selected="selected"{% endif %}>{{ access_level }}</option>
             {% endfor %}
         </select>
     </div>

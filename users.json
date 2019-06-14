@@ -1,0 +1,23 @@
+[
+  {
+    "last_access": "",
+    "fullname": "Lucas",
+    "role": "Dev",
+    "nickname": "lucas",
+    "access_level": "usuario"
+  },
+  {
+    "last_access": "2019-06-14 01:03:08",
+    "fullname": "Luiz",
+    "role": "Diretor",
+    "nickname": "luiz",
+    "access_level": "super-usuario"
+  },
+  {
+    "last_access": "2019-06-14 01:13:30",
+    "fullname": "Marco Luiz Gonzaga",
+    "role": "Dev",
+    "nickname": "marco",
+    "access_level": "tecnico"
+  }
+]
