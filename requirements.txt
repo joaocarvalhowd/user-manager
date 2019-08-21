@@ -10,4 +10,4 @@ marshmallow==3.0.0rc6
 mypy-extensions==0.4.1
 open-dev.to==1.0
 typing-inspect==0.4.0
-Werkzeug==0.15.2
+Werkzeug==0.15.3
